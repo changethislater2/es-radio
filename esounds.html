@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Es-radio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap" rel="stylesheet"> 
+    <style>
+      /* Set background color for page */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: #2F9E7A;
+      }
+
+      /* Center the playlist and button */
+      .playlist-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+      }
+      .playlist {
+        max-width: 600px;
+        height: 380px;
+      }
+      .open-spotify-btn {
+        margin-top: 12px;
+        padding: 5px 10px;
+        background-color: #14246b4b;
+        color: #ffffff;
+        font-size: 11px;
+        font-weight: bold;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      h1 {
+        font-family: 'Cherry Bomb One', cursive;
+        font-size: 55px; /* Optional: Adjust the font size */
+        color: hsla(219, 44%, 63%, 0.014); /* Optional: Adjust the font color */
+        text-align: center; /* Optional: Center the text */
+        margin-top: 0; /* Optional: Adjust the margin */
+        -webkit-text-stroke-width: .5px; /* Set the stroke width */
+        -webkit-text-stroke-color: #000000; /* Set the stroke color */
+      }
+      .dice-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+      }
+      .dice {
+        width: 40px;
+        height: 40px;
+        background-color: #ffffff;
+        margin: 0 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="playlist-container">
+      
+      <div class="dice-container">
+        <div class="dice" id="dice1"></div>
+        <div class="dice" id="dice2"></div>
+      </div>
+      <h1>es</h1>
+      <iframe class="playlist" src="https://open.spotify.com/embed/playlist/5t4uMT5AYg97iw9qZ5ICRr" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+      <button class="open-spotify-btn" onclick="openPlaylist()">Open in Spotify</button>
+    </div>
+    <script>
+      function openPlaylist() {
+        window.open('spotify:playlist:5t4uMT5AYg97iw9qZ5ICRr');
+      }
+      function getRandomNumber() {
+        return Math.floor(Math.random() * 6) + 1;
+      }
+
+      function rollDice() {
+        var dice1 = document.getElementById("dice1");
+        var dice2 = document.getElementById("dice2");
+        dice1.textContent = getRandomNumber();
+        dice2.textContent = getRandomNumber();
+      }
+
+      window.addEventListener("load", rollDice);
+    </script>
+    </script>
+  </body>
+</html>
